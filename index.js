@@ -36,7 +36,7 @@ app.group('/api/v1', (router) => {
   router.get('/categories', categoriesController.index)
   router.get('/category/:id', categoriesController.show)
   router.post('/category', categoriesController.add)
-  router.get('/articles', articlesController.index)
+  //router.get('/articles', articlesController.index)
 });
 
 //When this nodejs app executed, it will listen to defined port
