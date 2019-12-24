@@ -25,6 +25,7 @@ app.use(express.json())
 //
 
 const categoriesController = require("./controllers/categories")
+const articlesController = require("./controllers/articles")
 
 app.get('/', (req, res) => {
   res.send("Welcome to My Server. My name is Pandu Nugroho")
@@ -33,11 +34,18 @@ app.get('/', (req, res) => {
   // routers.get("/")
 
 app.group('/api/v1', (router) => {
+  // Categories
   router.get('/categories', categoriesController.index)
   router.get('/category/:id', categoriesController.show)
   router.post('/category', categoriesController.add)
-  //router.get('/articles', articlesController.index)
+
+  // Articles
+  router.get('/articles', articlesController.index)
+  router.post('/article', articlesController.add)
+  router.get('/category/:id/article', articlesController.add)
+  
 });
+
 
 //When this nodejs app executed, it will listen to defined port
 app.listen(port, () => console.log(`Listening on port ${port}`))

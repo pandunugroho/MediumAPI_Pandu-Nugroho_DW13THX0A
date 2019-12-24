@@ -11,7 +11,8 @@ module.exports = (sequelize, DataTypes) => {
       through: models.articles,
       as: "users",
       foreignKey : "category_id"
-    })
+    });
+    
   };
   return categories;
 };

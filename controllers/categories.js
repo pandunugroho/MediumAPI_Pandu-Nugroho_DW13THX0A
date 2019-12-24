@@ -3,7 +3,17 @@ const Model = require("../models");
 const Categories = Model.categories;
 
 exports.index = (req, res) => {
-  Categories.findAll().then(data => res.send(data));
+  Categories.findAll({
+    attributes: {
+      exclude: [
+        "updatedAt",
+        "category_id",
+        "author_id",
+        "is_published",
+        "is_archived"
+      ]
+    }
+  }).then(data => res.send(data));
 };
 
 exports.show = (req, res) => {
