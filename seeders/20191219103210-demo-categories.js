@@ -9,22 +9,36 @@ module.exports = {
       Example:
       */
     return queryInterface.bulkInsert('categories', [{
-      name: 'John Doe',
+      name: 'Programming',
       is_published: true,
       is_archived: false,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      name: 'Amna Arc',
+      name: 'Technology',
       is_published: true,
-      is_archived: true,
+      is_archived: false,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      name: 'Berril Barne',
-      is_published: false,
+      name: 'English',
+      is_published: true,
+      is_archived: false,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+    {
+      name: 'Mystery',
+      is_published: true,
+      is_archived: false,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+    {
+      name: 'Culture',
+      is_published: true,
       is_archived: false,
       createdAt: new Date(),
       updatedAt: new Date()

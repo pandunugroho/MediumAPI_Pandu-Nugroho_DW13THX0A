@@ -13,7 +13,10 @@ exports.index = (req, res) => {
         "is_archived"
       ]
     }
-  }).then(data => res.send(data));
+  })
+  .then(categoy => {
+    res.send(categoy)
+  })
 };
 
 exports.show = (req, res) => {
@@ -23,7 +26,7 @@ exports.show = (req, res) => {
       id: id
     }
   }).then(data => res.send(data))
-}
+};
 
 exports.add = (req,res) => {
   Categories.create(req.body).then(data =>
@@ -32,4 +35,4 @@ exports.add = (req,res) => {
       data
     })
     )
-}
+};

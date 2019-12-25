@@ -23,7 +23,7 @@ module.exports = {
           model: "categories",
           key: "id"
         },
-        onDelete: "set null",
+        onDelete: "cascade",
         onUpdate: "cascade"
       },
       category_name: {

@@ -2,6 +2,7 @@
 const Model = require("../models");
 const Articles = Model.articles;
 
+//Task 2 Controller
 exports.index = (req, res) => {
   Articles.findAll({
     attributes: {
@@ -38,8 +39,33 @@ exports.show = (req, res) => {
 exports.add = (req, res) => {
   Articles.create(req.body).then(data =>
     res.send({
-      message: "Successfully Add an Article",
+      message: "Successfully add an Article",
       data
     })
   )
 }
+
+//Task 3 Controller: show all article(s) by category_id 
+exports.indexByCategory = (req, res) => {
+  Articles.findAll({
+    attributes: {
+      exclude: [
+        "is_published",
+        "is_archived",
+        "slug",
+        "author_id"
+      ]
+      // include: [
+      //   "title",
+      //   "content",
+      //   "image",
+      //   "category_id",
+      //   "category_name"
+      // ]
+    },
+    where: {
+      id:category_id
+    }
+  }).then(data =>
+    res.send(data));
+};

@@ -15,11 +15,16 @@ module.exports = (sequelize, DataTypes) => {
     // associations can be defined here
     articles.belongsTo(models.categories, {
       foreignKey: "category_id",
-      sourceKey: "name"
+      as: "categories",
+      sourceKey: "id"
     });
     articles.belongsTo(models.users, {
       foreignKey: "author_id",
-      sourceKey: "fullname"
+      sourceKey: "id"
+    });
+    articles.hasMany(models.comments, {
+      foreignKey: "comment",
+      sourceKey: "id"
     });
   };
   return articles;

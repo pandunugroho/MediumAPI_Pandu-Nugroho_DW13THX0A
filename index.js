@@ -38,12 +38,35 @@ app.group('/api/v1', (router) => {
   router.get('/categories', categoriesController.index)
   router.get('/category/:id', categoriesController.show)
   router.post('/category', categoriesController.add)
-
-  // Articles
-  router.get('/articles', articlesController.index)
-  router.post('/article', articlesController.add)
-  router.get('/category/:id/article', articlesController.add)
   
+  
+  //Task 2: Articles
+  router.get('/articles', articlesController.index)
+  //Task 3: Category Detail
+  router.get('/category/:id/articles', articlesController.indexByCategory)
+  //Task 4: Create, Update, Delete Article
+  // router.post('/article', articlesController.)
+  // router.put('/article/:id', articlesController.)
+  // router.delete('/article/:id', articlesController.)
+  //Task 5: Detail Article
+  // router.get('/article/:id', articlesController.)
+  //Task 6: Create, Update, Delete Comment
+  // router.post('/article/:id/comment', articlesController.)
+  // router.put('/article/:id/comment', articlesController.)
+  // router.delete('/article/:id/comment', articlesController.)
+  // router.get('/article/:id/comments', articlesController.)
+  //Task 7: Follow
+  // router.post('/follow', followController.)
+  //Task 8: Related Article (see Task 3)
+  //Task 9: Article by Person
+  // router.post('/follow', users Controller.)
+  //Task 10:Login
+  // router.post('/login', loginController.)
+  //Task 11:Register
+  // router.post('/register', registerController.)
+  
+
+
 });
 
 
